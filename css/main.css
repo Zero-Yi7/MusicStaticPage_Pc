@@ -1,0 +1,609 @@
+/* 公共样式 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 去除li前面的实心圆 */
+/* 悬浮于链接上时，通常为手 */
+li {
+    list-style: none;
+    cursor: pointer;
+}
+
+/* 文本不可选中 */
+/* 悬浮于链接上时，通常为手 */
+img,span {
+    user-select: none;
+    cursor: pointer;
+}
+
+/* 去除a标签默认样式的下划线 */
+a {
+    text-decoration: none;
+}
+
+/* -------------------------- */
+body {
+    /* 使网站始终与设备的屏幕宽度成比例显示 */
+    width: 100vw;
+    height: 100vh;
+    /* 溢出隐藏、清除浮动、解决外边距塌陷 */
+    overflow: hidden;
+    /* 为元素设置背景图像 */
+    background-image: linear-gradient(120deg,#fccb90 0%, #d57eeb 100%);
+    /* 背景图像的大小。缩放到正好完全覆盖定义背景的区域 */
+    background-size: cover;
+    /* 给父亲添加 flex 属性，从而达到控制子元素的排列方式和位置 */
+    display: flex;
+    /* 对齐内容：居中，盒子元素在主轴（横轴）方向上的对齐方式为居中 */
+    justify-content: center;
+    /* 对齐项目：中心，flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式 */
+    align-items: center;
+}
+
+.container {
+    width: 1020px;
+    height: 690px;
+}
+
+
+/* ------------header----------------begin */
+/* 头部 */
+.header {
+    width: 100%;
+    height: 60px;
+    background-color: #323235;
+    display: flex;
+    /* 相对定位 */
+    /* 相对定位，确定元素的默认位置后，通过以下属性设置位置的偏移，该元素所占的空间依旧保留在原位置，其他元素不会挤占
+不会影响正常的文档流*/
+    position: relative;
+}
+
+/* 每一个图标字体 */
+.header i {
+    /* 每个i，即图标字体的颜色 */
+    color: #AFAFAF;
+    /* <i>是行内元素，此元素将显示为块级元素。 */
+    display: block;
+    /* 悬浮于链接上时，通常为手 */
+    cursor: pointer;
+    /* 字体大小为20像素 */
+    font-size: 20px;
+}
+
+/* 图片+文字 */
+.header .logo {
+    display: flex;
+    height: 100%;
+    width: 175px;
+
+    /* 侧轴居中 */
+    align-items: center;
+    /* 左外边距25px */
+    margin-left: 25px;
+    /* 文本不可选中 */
+    user-select: none;
+}
+
+/* logo里面的图片 */
+.logo img {
+    width: 30px;
+    height: 30px;
+}
+
+/* logo里面的文字 */
+.logo span {
+    /* <span>是行内元素，此元素将显示为块级元素。 */
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+/* 中间 */
+.header .middle {
+    height: 100%;
+    display: flex;
+    /* 侧轴居中 */
+    align-items: center;
+    margin-left: 20px;
+}
+
+/* 搜索 */
+.middle .search {
+    height: 20px;
+    background-color: #434346;
+    display: flex;
+    /* 侧轴居中，垂直居中 */
+    align-items: center;
+    border-radius: 30px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* 搜索框 */
+.search input {
+    /* 全透明黑色 */
+    background-color: transparent;
+    /* 边框为0 */
+    border: 0;
+    /* 高度 */
+    height: 15px;
+    /* 行高 */
+    line-height: 15px;
+    /* 宽度 */
+    width: 130px;
+    /* 使outline属性无效，使绘制于元素周围的一条线无效。 */
+    outline: none !important;
+    /* 文字颜色 */
+    color: #fff;
+    /* 左外边距 */
+    margin-left: 5px;
+}
+
+/* 其他 */
+.other {
+    display: flex;
+    /* 侧轴居中 */
+    align-items: center;
+    height: 100%;
+    width: 500px;
+    margin-left: 80px;
+}
+
+/* 用户信息 */
+.other .userInfo {
+    /* 爸爸为flex布局 */
+    display: flex;
+    align-items: center;
+}
+
+/* 用户信息-图片 */
+.other .userInfo img {
+    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+    /* 圆角 */
+    border-radius: 50%;
+}
+
+/* 用户信息-文本 */
+.other .userInfo span {
+    /* 文本颜色 */
+    color: #adadad;
+    /* 文字大小 */
+    font-size: 13px;
+}
+
+/* 各个排列的ul */
+.other ul {
+    /* 孩子绝对定位对应 other 的 display:flex; */
+    position: absolute;
+    right: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: red; */
+}
+
+/* 垂直条 */
+.other ul .vertical_bar {
+    width: 1px;
+    height: 20px;
+    background-color: #464648;
+}
+
+/* 各个小li */
+.other ul li {
+    /* 左外边距20像素 */
+    margin-left: 20px;
+}
+
+/* -------------header---------------end */
+.line {
+    /* 宽度会随着右边盒子的宽度而撑开 */
+    width: 100%;
+    height: 1px;
+    /* 为元素设置背景图像 */
+    background-image: linear-gradient(120deg,#fccb90 0%, red 50%,#d57eeb 100%);
+}
+
+.main {
+    width: 100%;
+    height: 560px;
+    display: flex;
+}
+
+/* ------------left-box--------------begin */
+.main .left-box {
+    height: 100%;
+    width: 200px;
+    /* 背景颜色 */
+    background-color: #434343;
+    /* 圆角边框 */
+    border-right: 1px solid #686868;
+    /* 文字颜色 */
+    color: #fff;
+    /* 文字大小 */
+    font-size: 15px;
+}
+
+.left-box ul {
+    width: 90%;
+    /* 外边框上下15px 左右居中 */
+    margin: 15px auto;
+}
+
+.left-box ul li {
+    /* 鼠标变为手 */
+    cursor: pointer;
+    width: 95%;
+    padding: 5px;
+    margin-bottom: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.left-box ul li:hover {
+    border-radius: 7px;
+    background-color: rgba(0,0,0,.3);
+    color: skyblue;
+}
+
+.left-box .my_music,
+.left-box .create_list{
+    width: 90%;
+    margin: 0 auto;
+    color: #7c7c7c;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    height: 20px;
+}
+
+.my_music span,
+.create_list span{
+    padding: 0 0 0 5px;
+}
+
+.mine span {
+    margin-left: 7px;
+}
+
+.left-box .create_list {
+    margin-bottom: 15px;
+    /* 相对定位 */
+    position: relative;
+}
+
+.i_last{
+    position: absolute;
+    right: 0;
+    color: #fff;
+}
+
+/* -------left-box------end */
+
+/* --------------right-box--------------------begin */
+.main .right-box {
+    background-color: #434343;
+    width: 819px;
+}
+
+.right-box .navigation {
+    display: flex;
+    height: 50px;
+    width: 500px;
+    align-items: center;
+    /* 对齐内容：居中，盒子元素在主轴（横轴）方向上的对齐方式为居中 */
+    justify-content: space-around;
+}
+
+.navigation li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* 相对定位 */
+    position: relative;
+}
+
+.navigation li span {
+    color: #fff;
+}
+
+.active {
+    font-size: 20px;
+}
+
+.active::before {
+    content: '';
+    width: 80%;
+    height: 2px;        
+    /* 绝对定位 */
+    position: absolute;
+    background-color: red;
+    top: 42px;
+}
+
+.right-box .banner {
+    width: 780px;
+    height: 200px;
+    border-radius: 15px;
+    margin: 10px auto;
+    background-image: linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%);
+    /* 相对定位 */
+    position: relative;
+}
+
+.banner img {
+    height: 200px;
+    /* 转为块级元素，显示元素 */
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.banner .infomation{
+    padding: 30px;
+    width: 400px;
+    height: 100%;
+    color: #fff;
+    /* 相对定位 */
+    position: relative;
+}
+
+.banner .infomation p {
+    padding: 10px;
+    display: block;
+    font-size: 13px;
+    /* 文本不可选中 */
+    user-select: none;
+}
+
+.banner .infomation .btn_listen {
+    width: 80px;
+    height: 30px;
+    margin-top: 10px;
+    display: flex;
+    /* 侧轴居中 */
+    align-items: center;
+    /* 对齐内容：居中，盒子元素在主轴（横轴）方向上的对齐方式为居中 */
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 13px;
+    /* 绝对定位 */
+    position: absolute;
+}
+
+.btn_listen_1 {
+    top: 140px;
+    left: 150px;
+    background-color: #516FF6;
+}
+
+.btn_listen_2 {
+    top: 140px;
+    left: 250px;
+    background-color: #f5da3f;
+}
+
+.right-box .dot {
+    width: 96%;
+    height: 20px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots {
+    width: 180px;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dots li {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #2e3033;
+    z-index: 100;
+    cursor: default;
+}
+
+.dots li:first-child {
+    background-color: #ec4141;
+}
+
+.dots li:hover {
+    background-color: #ec4141;
+}
+
+.right-box .recm_list {
+    position: relative;
+    margin: auto;
+    width: 96%;
+}
+
+.recm_list .recm_word {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 15px;
+    widows: 100px;
+    user-select: none;
+}
+
+.recm_list ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.recm_list ul li {
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.recm_list ul li span {
+    display: block;
+}
+
+.recm_list ul li img {
+    width: 140px;
+    border-radius: 5px;
+}
+
+/* -----------rirht-box-----------------end */
+
+/* -------------footer-box------------------begin */
+.footer {
+    /* 下边框 */
+    border-top: 1px solid #686868;
+    /* 下面盒子的高度 */
+    height: 68px;
+    /* 背景颜色 */
+    background-color: #343437;
+    /* flex弹性布局 */
+    display: flex;
+    /* 相对定位 */
+    position: relative;
+}
+
+.footer .ft_left {
+    /* 左边盒子的宽度 */
+    width: 220px;
+    /* flex布局 */
+    display: flex;
+    /* 侧轴居中 */
+    align-items: center;
+}
+
+.ft_left img {
+    width: 55px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.ft_left .songNameAndSinger {
+    color: #fff;
+    font-size: 14px;
+    margin-left: 10px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    /* 均匀排列每个元素,每个元素周围分配相同的空间 */
+    justify-content: space-around;
+}
+
+.songNameAndSinger i{
+    margin-left: 8px;
+}
+
+.songNameAndSinger span.singer{
+    font-size: 10px;
+}
+
+.footer .ft_main {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    /* 灵活的项目将垂直显示，正如一个列一样。 */
+    justify-content: space-evenly;
+    align-items: center;
+    /* 相对定位 */
+    position: relative;
+}
+
+.tool_list {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30px;
+}
+.tool_list li{
+    cursor: pointer;
+}
+
+.tool_list li i{
+    color: #d4d4d4;
+    font-size: 20px;
+}
+
+.tool_list li:nth-child(3) i{
+    font-size: 30px;
+}
+
+.ft_main .progress {
+    width: 60%;
+    height: 2px;
+    background-color: grey;
+    /* 相对定位 */
+    position: relative;
+}
+
+.progress .slide {
+    /* 绝对定位 */
+    position: absolute;
+    top: -1.6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ec4141;
+    z-index: 9;
+}
+.progress .fill{
+    position: absolute;
+    top: 0;
+    height: 2px;
+    background-color: #ec4141;
+}
+
+.time{
+    color: #fff;
+    font-size: 10px;
+    position: absolute;
+    cursor: default;
+}
+
+.ft_main .currentTime{
+    top: -8px;
+    left: -37px;
+}
+
+.ft_main .duraTime{
+    top: -8px;
+    right: -40px;
+}
+
+.footer .ft_right{
+    width: 250px;
+    height: 100%;
+    /* background-color: #bfa; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ft_right .jigao{
+    font-size: 14px;
+    color: red;
+    border: red 2px solid;
+    line-height: 100%;
+    padding: 2px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.ft_right .iconfont{
+    color: #d4d4d4;
+    font-size: 20px;
+}
+/* ----------footer-------------end*/
